@@ -29,7 +29,7 @@ def Main():
 	message = "LED waiting for command..."
 	while True:
 		data = s.recv(1024).decode('utf-8')
-		if not data
+		if not data:
 			break
 		if(data is "LED_ON"):
 			digitalWrite(LED,1)
