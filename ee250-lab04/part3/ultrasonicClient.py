@@ -30,7 +30,6 @@ def Main():
 	ultrasonic_ranger = 4
 
 	while True:
-		print("enter true loop")
 
 		try:
 			# Read distance value from Ultrasonic
@@ -46,8 +45,6 @@ def Main():
 
 		# for UDP, sendto() and recvfrom() are used instead
 		s.sendto(dist.encode('utf-8'), server) 
-
-		print("end of true loop")
 	
 	s.close()
 
