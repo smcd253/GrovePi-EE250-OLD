@@ -4,6 +4,7 @@ import sys
 sys.path.append('../../Software/Python/')
 
 from grovepi import *
+import socket
 
 #use UDP
 def Main():
