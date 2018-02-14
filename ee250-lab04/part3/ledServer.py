@@ -39,8 +39,8 @@ def Main():
 			message = "LED OFF"
 		else:
 			message = "command not recognized"
-		s.send(message.encode('utf-8'))
-	s.close()
+		c.send(message.encode('utf-8'))
+	c.close()
 
 if __name__ == '__main__':
 	Main()
