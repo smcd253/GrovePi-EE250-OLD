@@ -36,7 +36,12 @@ import socket
 
 		# for UDP, sendto() and recvfrom() are used instead
 		s.sendto(dist.encode('utf-8'), server) 
+
+		print("end of true loop")
+	
 	s.close()
+
+		print("connection closed")
 
 	if __name__ == '__main__':
 		Main()
