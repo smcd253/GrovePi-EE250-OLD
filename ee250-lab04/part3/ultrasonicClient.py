@@ -31,16 +31,15 @@ def Main():
 
 	while True:
 		print("enter true loop")
-		dist = grovepi.ultrasonicRead(ultrasonic_ranger)
 
-		# try:
-		# 	# Read distance value from Ultrasonic
-		# 	dist = grovepi.ultrasonicRead(ultrasonic_ranger)
+		try:
+			# Read distance value from Ultrasonic
+			dist = grovepi.ultrasonicRead(ultrasonic_ranger)
 
-		# except TypeError:
-		# 	dist = "TypeError"
-		# except IOError:
-		# 	dist = "IOError"
+		except TypeError:
+			dist = "TypeError"
+		except IOError:
+			dist = "IOError"
 
 		#tuples are immutable so we need to overwrite the last tuple
 		server = (server_addr, int(dst_port))
