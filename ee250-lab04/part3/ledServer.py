@@ -36,7 +36,7 @@ def Main():
 		if data == "LED_ON":
 			digitalWrite(LED,1)
 			message = "LED ON"
-		if data == "LED_OFF":
+		elif data == "LED_OFF":
 			digitalWrite(LED,0)
 			message = "LED OFF"
 		else:
