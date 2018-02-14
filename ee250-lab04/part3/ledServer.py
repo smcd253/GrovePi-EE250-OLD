@@ -3,30 +3,40 @@ import sys
 # we are successfully `from grovepi import *`
 sys.path.append('../../Software/Python/')
 
+import grovepi
 import socket 
 
 # use TCP
-def Process1():
+def Main():
     # Change the host and port as needed. For ports, use a number in the 9000 
     # range. 
-    host = '10.0.2.15'
-    port = 9000
+    host = '192.168.1.249'
+    port = 8000
 
     s = socket.socket()
     s.bind((host,port))
-    
+
     s.listen(1)
     c, addr = s.accept()
 
     print("Connected to: " + str(addr))
 
-    command = input("command->")
-    while True:
-        c.send(command.encode('utf-8'))
-        data = c.recv(1024).decode('utf-8')
-        print("LED status: " + data)
-        command = input("command->")
+    LED = 3
+
+	pinMode(LED,"OUTPUT")
+
+	message = "LED waiting for command..."
+	while True:
+		s.send(message.encode('utf-8'))
+		data = s.recv(1024).decode('utf-8')
+		if(data is "LED_ON"):
+			digitalWrite(LED,1)
+			message = "LED ON"
+		if(data is "LED_OFF"):
+			message = "LED OFF"
+		else:
+			message = "command not recognized"
     c.close()
 
 if __name__ == '__main__':
-    Process1()
+    Main()
