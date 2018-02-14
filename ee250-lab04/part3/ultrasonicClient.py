@@ -34,17 +34,18 @@ def Main():
 		try:
 			# Read distance value from Ultrasonic
 			dist = grovepi.ultrasonicRead(ultrasonic_ranger)
+			data = int(dist)
 
 		except TypeError:
-			dist = "TypeError"
+			data = "TypeError"
 		except IOError:
-			dist = "IOError"
+			data = "IOError"
 
 		#tuples are immutable so we need to overwrite the last tuple
 		server = (server_addr, int(dst_port))
-
+		print(data)
 		# for UDP, sendto() and recvfrom() are used instead
-		s.sendto(dist.encode('utf-8'), server) 
+		s.sendto(data.encode('utf-8'), server) 
 	
 	s.close()
 
