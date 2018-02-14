@@ -7,7 +7,7 @@ from grovepi import *
 import socket
 
 #use UDP
-	def Main():
+def Main():
 	# Change the host and port as needed. For ports, use a number in the 9000 
 	# range. 
 	host = '192.168.1.249'
