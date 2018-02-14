@@ -31,6 +31,7 @@ def Main():
 		data = c.recv(1024).decode('utf-8')
 		if not data:
 			break
+		data = str(data)
 		print(data)
 		if(data is "LED_ON"):
 			digitalWrite(LED,1)
