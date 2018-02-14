@@ -14,7 +14,7 @@ def Process1():
 
     s = socket.socket()
     s.bind((host,port))
-
+    
     s.listen(1)
     c, addr = s.accept()
 
