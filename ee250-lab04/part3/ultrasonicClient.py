@@ -4,6 +4,7 @@ import sys
 sys.path.append('../../Software/Python/')
 
 from grovepi import *
+import grovepi
 import socket
 
 #use UDP
@@ -26,6 +27,8 @@ def Main():
 	# UDP is connectionless, so a client does not formally connect to a server
 	dst_port = 8000
 
+	ultrasonic_ranger = 4
+	
 	while True:
 		print("enter true loop")
 		dist = grovepi.ultrasonicRead(ultrasonic_ranger)
