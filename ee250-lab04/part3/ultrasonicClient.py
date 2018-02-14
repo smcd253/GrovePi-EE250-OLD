@@ -21,18 +21,20 @@ def Main():
     # UDP is connectionless, so a client does not formally connect to a server
     dst_port = 8000
 
-    while TRUE:
-	    try:
-	        # Read distance value from Ultrasonic
-	        dist = grovepi.ultrasonicRead(ultrasonic_ranger)
+    while True:
+	    dist = grovepi.ultrasonicRead(ultrasonic_ranger)
 
-	    except TypeError:
-	        data = "TypeError"
-	    except IOError:
-	        data = "IOError"
+	    # try:
+	    #     # Read distance value from Ultrasonic
+	    #     dist = grovepi.ultrasonicRead(ultrasonic_ranger)
+
+	    # except TypeError:
+	    #     dist = "TypeError"
+	    # except IOError:
+	    #     dist = "IOError"
 
         #tuples are immutable so we need to overwrite the last tuple
-        server = (server_addr, int(dst_port))
+       	server = (server_addr, int(dst_port))
 
         # for UDP, sendto() and recvfrom() are used instead
         s.sendto(dist.encode('utf-8'), server) 
