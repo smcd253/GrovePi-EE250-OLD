@@ -51,5 +51,5 @@ def Main():
 
 	print("connection closed")
 
-	if __name__ == '__main__':
+if __name__ == '__main__':
 		Main()
