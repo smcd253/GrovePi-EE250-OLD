@@ -32,7 +32,6 @@ def Main():
 		if not data:
 			break
 		data = str(data)
-		print(data + data)
 		if data == "LED_ON":
 			digitalWrite(LED,1)
 			message = "LED ON"
