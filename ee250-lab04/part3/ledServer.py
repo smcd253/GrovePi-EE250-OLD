@@ -28,7 +28,7 @@ def Main():
 
 	message = "LED waiting for command..."
 	while True:
-		data = s.recv(1024).decode('utf-8')
+		data = c.recv(1024).decode('utf-8')
 		if not data:
 			break
 		if(data is "LED_ON"):
@@ -40,7 +40,7 @@ def Main():
 		else:
 			message = "command not recognized"
 		s.send(message.encode('utf-8'))
-	c.close()
+	s.close()
 
 if __name__ == '__main__':
 	Main()
