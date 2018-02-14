@@ -33,10 +33,10 @@ def Main():
 			break
 		data = str(data)
 		print(data)
-		if(data is "LED_ON"):
+		if data is "LED_ON":
 			digitalWrite(LED,1)
 			message = "LED ON"
-		if(data is "LED_OFF"):
+		if data is "LED_OFF":
 			digitalWrite(LED,0)
 			message = "LED OFF"
 		else:
