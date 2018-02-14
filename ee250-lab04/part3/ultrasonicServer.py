@@ -15,7 +15,7 @@ def Process1():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.bind((host,port))
 
-    print("Process 1 Server Started")
+    print("Ultrasonic Server Started")
     while True:
         data, addr = s.recvfrom(1024)
         data = data.decode('utf-8')
