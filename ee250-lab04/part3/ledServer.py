@@ -9,36 +9,36 @@ import socket
 
 # use TCP
 def Main():
-# Change the host and port as needed. For ports, use a number in the 9000 
-# range. 
-host = '192.168.1.249'
-port = 8000
+	# Change the host and port as needed. For ports, use a number in the 9000 
+	# range. 
+	host = '192.168.1.249'
+	port = 8000
 
-s = socket.socket()
-s.bind((host,port))
+	s = socket.socket()
+	s.bind((host,port))
 
-s.listen(1)
-c, addr = s.accept()
+	s.listen(1)
+	c, addr = s.accept()
 
-print("Connected to: " + str(addr))
+	print("Connected to: " + str(addr))
 
-LED = 3
+	LED = 3
 
-pinMode(LED,"OUTPUT")
+	pinMode(LED,"OUTPUT")
 
-message = "LED waiting for command..."
-while True:
-	s.send(message.encode('utf-8'))
-	data = s.recv(1024).decode('utf-8')
-	if(data is "LED_ON"):
-		digitalWrite(LED,1)
-		message = "LED ON"
-	if(data is "LED_OFF"):
-		digitalWrite(LED,0)
-		message = "LED OFF"
-	else:
-		message = "command not recognized"
-c.close()
+	message = "LED waiting for command..."
+	while True:
+		s.send(message.encode('utf-8'))
+		data = s.recv(1024).decode('utf-8')
+		if(data is "LED_ON"):
+			digitalWrite(LED,1)
+			message = "LED ON"
+		if(data is "LED_OFF"):
+			digitalWrite(LED,0)
+			message = "LED OFF"
+		else:
+			message = "command not recognized"
+	c.close()
 
 if __name__ == '__main__':
 	Main()
