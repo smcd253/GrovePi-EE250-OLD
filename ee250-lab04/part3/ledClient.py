@@ -3,8 +3,6 @@ import sys
 # we are successfully `from grovepi import *`
 sys.path.append('../../Software/Python/')
 
-import grovepi
-from grovepi import *
 import socket
 
 #use tcp
@@ -20,8 +18,8 @@ def Main():
 
 	command = input("command->")
 	while True:
-		c.send(command.encode('utf-8'))
-		data = c.recv(1024).decode('utf-8')
+		s.send(command.encode('utf-8'))
+		data = s.recv(1024).decode('utf-8')
 		print("LED status: " + data)
 		command = input("command->")
 	s.close()
