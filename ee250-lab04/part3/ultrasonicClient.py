@@ -8,6 +8,8 @@ import socket
 
 #use UDP
 def Main():
+	print("enter main")
+
 	# Change the host and port as needed. For ports, use a number in the 9000 
 	# range. 
 	host = '192.168.1.249'
@@ -15,13 +17,17 @@ def Main():
 
 	server_addr = '192.168.1.189'
 
-	s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
+	s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+	print("socket created")
+
 	s.bind((host,port))
+	print("socket bound")
 
 	# UDP is connectionless, so a client does not formally connect to a server
 	dst_port = 8000
 
 	while True:
+		print("enter true loop")
 		dist = grovepi.ultrasonicRead(ultrasonic_ranger)
 
 		# try:
