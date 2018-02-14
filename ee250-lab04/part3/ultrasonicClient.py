@@ -41,7 +41,7 @@ import socket
 	
 	s.close()
 
-		print("connection closed")
+	print("connection closed")
 
 	if __name__ == '__main__':
 		Main()
