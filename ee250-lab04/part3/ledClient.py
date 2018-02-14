@@ -19,11 +19,11 @@ def Main():
 	print("socket connected")
 
 	command = input("command->")
-    while True:
-        c.send(command.encode('utf-8'))
-        data = c.recv(1024).decode('utf-8')
-        print("LED status: " + data)
-        command = input("command->")
+	while True:
+		c.send(command.encode('utf-8'))
+		data = c.recv(1024).decode('utf-8')
+		print("LED status: " + data)
+		command = input("command->")
 	s.close()
 
 if __name__ == '__main__':
