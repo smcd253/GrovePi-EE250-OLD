@@ -13,7 +13,7 @@ def Main():
 
 	# Change the host and port as needed. For ports, use a number in the 9000 
 	# range. 
-	host = '192.168.1.249'
+	host = '192.168.1.100'
 	port = 5000
 
 	server_addr = '192.168.1.189'
