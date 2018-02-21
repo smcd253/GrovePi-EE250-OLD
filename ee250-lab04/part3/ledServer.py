@@ -12,7 +12,7 @@ def Main():
 	# Change the host and port as needed. For ports, use a number in the 9000 
 	# range. 
 	host = '192.168.1.100'
-	port = 8001
+	port = 9000
 
 	s = socket.socket()
 	s.bind((host,port))
