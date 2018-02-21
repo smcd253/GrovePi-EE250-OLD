@@ -7,8 +7,8 @@ import socket
 
 #use tcp
 def Main():
-	host = '192.168.1.189'
-	port = 9000
+	host = '10.0.2.15'
+	port = 9001
 
 	s = socket.socket()
 	print("socket created")
