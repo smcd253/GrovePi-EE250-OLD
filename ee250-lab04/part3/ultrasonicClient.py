@@ -34,7 +34,7 @@ def Main():
 		try:
 			# Read distance value from Ultrasonic
 			dist = grovepi.ultrasonicRead(ultrasonic_ranger)
-			data = int(dist)
+			data = str(dist)
 
 		except TypeError:
 			data = "TypeError"
